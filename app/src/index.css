@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Временный фон, чтобы видеть, что dev-приложение работает */
+html, body, #react-root {
+  height: 100%;
+}
+
+
