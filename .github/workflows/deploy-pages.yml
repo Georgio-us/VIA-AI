@@ -21,10 +21,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Upload Pages artifact (static)
+      - name: Upload Pages artifact (root)
         uses: actions/upload-pages-artifact@v3
         with:
-          path: static
+          path: .
 
   deploy:
     needs: build
