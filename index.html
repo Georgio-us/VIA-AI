@@ -570,34 +570,7 @@
         </div>
     </div>
     
-    <!-- JavaScript -->
-    <script>
-        function toggleDetails(serviceType) {
-            const detailsElement = document.getElementById(serviceType + '-details');
-            const serviceCard = detailsElement.closest('.service-card');
-            const expandIcon = serviceCard.querySelector('.expand-icon');
-            
-            // Toggle the expanded state
-            const isExpanded = detailsElement.classList.contains('expanded');
-            
-            if (isExpanded) {
-                detailsElement.classList.remove('expanded');
-                expandIcon.classList.remove('expanded');
-            } else {
-                // Close all other expanded sections first
-                document.querySelectorAll('.details-list.expanded').forEach(element => {
-                    element.classList.remove('expanded');
-                });
-                document.querySelectorAll('.expand-icon.expanded').forEach(icon => {
-                    icon.classList.remove('expanded');
-                });
-                
-                // Open the clicked section
-                detailsElement.classList.add('expanded');
-                expandIcon.classList.add('expanded');
-            }
-        }
-    </script>
+  <!-- JavaScript moved to main.js -->
 
 <div id="react-root"></div>
     
