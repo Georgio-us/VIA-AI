@@ -21,10 +21,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Upload Pages artifact (proptech-deploy)
+      - name: Upload Pages artifact (root)
         uses: actions/upload-pages-artifact@v3
         with:
-          path: proptech-deploy
+          path: .
 
   deploy:
     needs: build
