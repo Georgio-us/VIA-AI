@@ -12,16 +12,24 @@
     <a href="#" class="Header__logo">
       <img src="assets/LOGO.svg" alt="VIA.AI">
     </a>
-    <nav class="Header__nav">
-      <a href="#" class="Header__link menu-link">ai integration</a>
-      <a href="#" class="Header__link menu-link">how it works</a>
-      <a href="#" class="Header__link menu-link">price</a>
+    <nav class="Header__nav" id="HeaderNav">
+      <a href="#Why" class="Header__link menu-link">Ai integration</a>
+      <a href="#AllInside" class="Header__link menu-link">How it works</a>
+      <a href="#pricing-cards" class="Header__link menu-link">Price</a>
+      <button class="btn btn--secondary Header__nav-btn">Book a demo</button>
     </nav>
-    <button class="btn btn--secondary">book a demo</button>
+    <button class="btn btn--secondary Header__demo-btn">Book a demo</button>
+    <button class="Header__menu-toggle" id="MenuToggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
 </header>
 <main>
 <section id="HeroBlock" class="HeroBlock">
+  <div class="HeroBlock__blob HeroBlock__blob--blue"></div>
+  <div class="HeroBlock__blob HeroBlock__blob--blue-2"></div>
   <div class="HeroBlock__container">
     <div class="HeroBlock__content">
       <h1 class="HeroBlock__title">
@@ -32,30 +40,38 @@
         VIA AI understands clients' requests, knows your database, speaks any language and converts traffic into qualified leads — 24/7, automatically.
       </p>
       <div class="HeroBlock__buttons">
-        <button class="btn btn--primary">Try live demo</button>
-        <button class="btn btn--secondary">See use cases</button>
+        <button class="btn btn--primary HeroBlock__btn-demo HeroBlock__btn-demo--desktop">Try live demo</button>
+        <button class="btn btn--secondary HeroBlock__btn-cases">See use cases</button>
       </div>
     </div>
     <div class="HeroBlock__image-wrapper">
       <img src="assets/hero_img_large.png" alt="VIA.AI Widget" class="HeroBlock__image">
     </div>
+    <button class="btn btn--primary HeroBlock__btn-demo HeroBlock__btn-demo--mobile">Try live demo</button>
   </div>
-  <div class="HeroBlock__learn-more">
-    <span class="HeroBlock__learn-more-text menu-link">learn more</span>
+  <a href="#why-grid" class="HeroBlock__learn-more">
+    <span class="HeroBlock__learn-more-text menu-link">Learn more</span>
     <div class="HeroBlock__learn-more-arrow"></div>
-  </div>
+  </a>
 </section>
 <section id="Why" class="Why">
   <div class="Why__header">
-    <h2 class="Why__title">Why Your Real Estate Website <span class="accent-blue">Needs VIA AI</span></h2>
-    <div class="HeroBlock__line"></div>
+    <div class="Why__header-title-wrapper">
+      <h2 class="Why__title">Why Your Real Estate Website <span class="accent-blue">Needs VIA AI</span></h2>
+      <div class="HeroBlock__line"></div>
+    </div>
     <p class="Why__description title">
       Most real estate websites look good — but they don’t convert. VIA AI turns your website traffic
       into real conversations, insights and qualified leads.
     </p>
   </div>
-  <div class="Why__grid">
-    <article class="WhyCard">
+  <div class="Why__slider-wrapper">
+    <div id="why-grid" class="Why__grid Why__slider">
+      <article class="WhyCard">
+      <div class="WhyCard__particle WhyCard__particle--1"></div>
+      <div class="WhyCard__particle WhyCard__particle--2"></div>
+      <div class="WhyCard__particle WhyCard__particle--3"></div>
+      <div class="WhyCard__particle WhyCard__particle--4"></div>
       <img src="assets/BIS.svg" alt="Attention retention icon" class="WhyCard__icon">
       <div class="WhyCard__content">
         <h5 class="WhyCard__title WhyCard__title--green">+250% Attention Retention</h5>
@@ -66,6 +82,10 @@
       </div>
     </article>
     <article class="WhyCard">
+      <div class="WhyCard__particle WhyCard__particle--1"></div>
+      <div class="WhyCard__particle WhyCard__particle--2"></div>
+      <div class="WhyCard__particle WhyCard__particle--3"></div>
+      <div class="WhyCard__particle WhyCard__particle--4"></div>
       <img src="assets/DEV.svg" alt="Recommendations icon" class="WhyCard__icon">
       <div class="WhyCard__content">
         <h5 class="WhyCard__title WhyCard__title--blue">Hyper-Personalized Recommendations</h5>
@@ -76,54 +96,73 @@
       </div>
     </article>
     <article class="WhyCard">
+      <div class="WhyCard__particle WhyCard__particle--1"></div>
+      <div class="WhyCard__particle WhyCard__particle--2"></div>
+      <div class="WhyCard__particle WhyCard__particle--3"></div>
+      <div class="WhyCard__particle WhyCard__particle--4"></div>
       <img src="assets/CRM.svg" alt="Instant response icon" class="WhyCard__icon">
       <div class="WhyCard__content">
         <h5 class="WhyCard__title WhyCard__title--yellow">24/7 Instant Response Layer</h5>
-        <p class="WhyCard__subtitle subtitle">Your agents can’t answer 24/7</p>
+        <p class="WhyCard__subtitle subtitle">Your agents can't answer 24/7</p>
         <p class="WhyCard__text">
           Leads come at night, weekends, and during viewings. VIA AI talks to clients anytime and captures the opportunity.
         </p>
       </div>
     </article>
     <article class="WhyCard">
+      <div class="WhyCard__particle WhyCard__particle--1"></div>
+      <div class="WhyCard__particle WhyCard__particle--2"></div>
+      <div class="WhyCard__particle WhyCard__particle--3"></div>
+      <div class="WhyCard__particle WhyCard__particle--4"></div>
       <img src="assets/MRKT.svg" alt="Property discovery icon" class="WhyCard__icon">
       <div class="WhyCard__content">
         <h5 class="WhyCard__title WhyCard__title--red">3× Faster Property Discovery</h5>
         <p class="WhyCard__subtitle subtitle">Browsing 500+ listings is overwhelming</p>
         <p class="WhyCard__text">
-          Filters don’t help when a client doesn’t know what they want. AI guides them to the right place with simple natural language.
+          Filters don't help when a client doesn't know what they want. AI guides them to the right place with simple natural language.
         </p>
       </div>
     </article>
+    </div>
+    <div class="Why__slider-indicators"></div>
   </div>
   <div class="WhyIntegrations">
+    <div class="WhyIntegrations__particle WhyIntegrations__particle--1"></div>
+    <div class="WhyIntegrations__particle WhyIntegrations__particle--2"></div>
+    <div class="WhyIntegrations__particle WhyIntegrations__particle--3"></div>
+    <div class="WhyIntegrations__particle WhyIntegrations__particle--4"></div>
     <img src="assets/Integrated%20title%20bar%20and%20toolbar.svg" alt="" class="WhyIntegrations__chrome" aria-hidden="true">
     <div class="WhyIntegrations__body">
       <div class="WhyIntegrations__intro">
-        <h3 class="WhyIntegrations__title">
-          Turn Your Website Into an <span class="accent-blue">AI-Powered</span> Marketplace
-        </h3>
-        <div class="HeroBlock__line"></div>
+        <div class="WhyIntegrations__header">
+          <h3 class="WhyIntegrations__title">
+            Turn Your Website Into an <span class="accent-blue">AI-Powered</span> Marketplace
+          </h3>
+          <div class="HeroBlock__line"></div>
+        </div>
         <p class="WhyIntegrations__description title">
-          Import your listings from Excel, CSV, Airtable or Notion. VIA AI automatically reads attributes,
+          Import your listings from Excel, CSV, Airtable or Notion. <br> VIA AI automatically reads attributes,
           filters properties and suggests the best matches to clients.
         </p>
-        <div class="WhyIntegrations__icons">
-          <div class="WhyIntegrations__icon-card">
-            <img src="assets/excel.svg" alt="Excel" loading="lazy">
+        <div class="WhyIntegrations__slider-wrapper">
+          <div class="WhyIntegrations__icons WhyIntegrations__slider">
+            <div class="WhyIntegrations__icon-card">
+              <img src="assets/excel.svg" alt="Excel" loading="lazy">
+            </div>
+            <div class="WhyIntegrations__icon-card">
+              <img src="assets/csv.svg" alt="CSV" loading="lazy">
+            </div>
+            <div class="WhyIntegrations__icon-card">
+              <img src="assets/docs.svg" alt="Google Sheets" loading="lazy">
+            </div>
+            <div class="WhyIntegrations__icon-card">
+              <img src="assets/airtable.svg" alt="Airtable" loading="lazy">
+            </div>
+            <div class="WhyIntegrations__icon-card">
+              <img src="assets/doc_add.svg" alt="Notion & custom sources" loading="lazy">
+            </div>
           </div>
-          <div class="WhyIntegrations__icon-card">
-            <img src="assets/csv.svg" alt="CSV" loading="lazy">
-          </div>
-          <div class="WhyIntegrations__icon-card">
-            <img src="assets/docs.svg" alt="Google Sheets" loading="lazy">
-          </div>
-          <div class="WhyIntegrations__icon-card">
-            <img src="assets/airtable.svg" alt="Airtable" loading="lazy">
-          </div>
-          <div class="WhyIntegrations__icon-card">
-            <img src="assets/doc_add.svg" alt="Notion & custom sources" loading="lazy">
-          </div>
+          <div class="WhyIntegrations__slider-indicators"></div>
         </div>
         <p class="WhyIntegrations__note">
           Supports photos, prices, filters, amenities and custom fields.
@@ -137,44 +176,64 @@
 </section>
 <section id="ItWorks" class="ItWorks">
   <div class="ItWorks__header">
-    <h2 class="ItWorks__title"><span class="accent-blue">It works</span> on any platform</h2>
-    <div class="HeroBlock__line"></div>
+    <div class="ItWorks__header-title-wrapper">
+      <h2 class="ItWorks__title"><span class="accent-blue">It works</span> on any platform</h2>
+      <div class="HeroBlock__line"></div>
+    </div>
     <p class="ItWorks__description title">
       Connect VIA AI to your website, CRM, database or automation tools — no coding required.
     </p>
   </div>
-  <div class="ItWorks__logos ItWorks__logos--top">
-    <img src="assets/tilda.svg" alt="Tilda">
-    <img src="assets/wordpress.svg" alt="WordPress">
-    <img src="assets/webflow.svg" alt="Webflow">
-    <img src="assets/react.svg" alt="React">
-    <img src="assets/next.svg" alt="Next.js">
-    <img src="assets/notion.svg" alt="Notion">
+  <div class="ItWorks__slider-wrapper">
+    <div class="ItWorks__logos ItWorks__logos--top ItWorks__slider">
+      <img src="assets/tilda.svg" alt="Tilda">
+      <img src="assets/wordpress.svg" alt="WordPress">
+      <img src="assets/webflow.svg" alt="Webflow">
+      <img src="assets/react.svg" alt="React">
+      <img src="assets/next.svg" alt="Next.js">
+      <img src="assets/notion.svg" alt="Notion">
+    </div>
+    <div class="ItWorks__slider-indicators ItWorks__slider-indicators--top"></div>
   </div>
-  <div class="ItWorks__logos ItWorks__logos--bottom">
-    <img src="assets/pipedrive.svg" alt="Pipedrive">
-    <img src="assets/zapier.svg" alt="Zapier">
-    <img src="assets/make.svg" alt="Make">
-    <img src="assets/hubspot.svg" alt="HubSpot">
-    <img src="assets/n8n.svg" alt="n8n">
-    <img src="assets/zoho.svg" alt="Zoho CRM">
-    <img src="assets/image 6339.svg" alt="Bitrix24">
+  <div class="ItWorks__slider-wrapper">
+    <div class="ItWorks__logos ItWorks__logos--bottom ItWorks__slider">
+      <img src="assets/pipedrive.svg" alt="Pipedrive">
+      <img src="assets/zapier.svg" alt="Zapier">
+      <img src="assets/make.svg" alt="Make">
+      <img src="assets/hubspot.svg" alt="HubSpot">
+      <img src="assets/n8n.svg" alt="n8n">
+      <img src="assets/zoho.svg" alt="Zoho CRM">
+      <img src="assets/image 6339.svg" alt="Bitrix24">
+    </div>
+    <div class="ItWorks__slider-indicators ItWorks__slider-indicators--bottom"></div>
   </div>
-  <div class="ItWorks__cta">
-    <p class="ItWorks__cta-text menu-link">Let’s look inside?</p>
-    <button class="ItWorks__cta-btn" aria-label="Learn more"></button>
-  </div>
+  <a href="#allinside-grid" class="ItWorks__cta">
+    <p class="ItWorks__cta-text menu-link">Let's look inside?</p>
+    <div class="ItWorks__cta-btn" aria-label="Learn more"></div>
+  </a>
 </section>
 <section id="AllInside" class="AllInside">
+  
   <div class="AllInside__header">
-    <h2 class="AllInside__title">All <span class="accent-blue">inside</span> a simple widget.</h2>
-    <div class="HeroBlock__line"></div>
+    <div class="AllInside__header-title-wrapper">
+      <h2 class="AllInside__title">All <span class="accent-blue">inside</span> a simple widget.</h2>
+      <div class="HeroBlock__line"></div>
+    </div>
     <p class="AllInside__description title">
       A seamless combination of voice recognition, data connections, LLM reasoning and automation.
     </p>
   </div>
-  <div class="AllInside__grid">
-    <article class="AllInsideCard AllInsideCard--blue">
+  <div class="AllInside__slider-wrapper">
+    <div id="allinside-grid" class="AllInside__grid AllInside__slider">
+      <article class="AllInsideCard AllInsideCard--blue">
+      <div class="AllInsideCard__particle AllInsideCard__particle--1"></div>
+      <div class="AllInsideCard__particle AllInsideCard__particle--2"></div>
+      <div class="AllInsideCard__particle AllInsideCard__particle--3"></div>
+      <div class="AllInsideCard__particle AllInsideCard__particle--4"></div>
+      <div class="AllInsideCard__spark AllInsideCard__spark--red"></div>
+      <div class="AllInsideCard__spark AllInsideCard__spark--green"></div>
+      <div class="AllInsideCard__spark AllInsideCard__spark--blue"></div>
+      <div class="AllInsideCard__spark AllInsideCard__spark--yellow"></div>
       <div class="AllInsideCard__inner">
         <h5 class="AllInsideCard__title">Whisper technology</h5>
         <p class="AllInsideCard__subtitle subtitle">Speech to text</p>
@@ -184,6 +243,14 @@
       </div>
     </article>
     <article class="AllInsideCard AllInsideCard--yellow">
+      <div class="AllInsideCard__particle AllInsideCard__particle--1"></div>
+      <div class="AllInsideCard__particle AllInsideCard__particle--2"></div>
+      <div class="AllInsideCard__particle AllInsideCard__particle--3"></div>
+      <div class="AllInsideCard__particle AllInsideCard__particle--4"></div>
+      <div class="AllInsideCard__spark AllInsideCard__spark--red"></div>
+      <div class="AllInsideCard__spark AllInsideCard__spark--green"></div>
+      <div class="AllInsideCard__spark AllInsideCard__spark--blue"></div>
+      <div class="AllInsideCard__spark AllInsideCard__spark--yellow"></div>
       <div class="AllInsideCard__inner">
         <h5 class="AllInsideCard__title">LLM Reasoning + Agents</h5>
         <p class="AllInsideCard__subtitle subtitle">AI Reasoning Engine</p>
@@ -196,6 +263,14 @@
       <img src="assets/widget_promo.png" alt="Widget promo" loading="lazy">
     </div>
     <article class="AllInsideCard AllInsideCard--red">
+      <div class="AllInsideCard__particle AllInsideCard__particle--1"></div>
+      <div class="AllInsideCard__particle AllInsideCard__particle--2"></div>
+      <div class="AllInsideCard__particle AllInsideCard__particle--3"></div>
+      <div class="AllInsideCard__particle AllInsideCard__particle--4"></div>
+      <div class="AllInsideCard__spark AllInsideCard__spark--red"></div>
+      <div class="AllInsideCard__spark AllInsideCard__spark--green"></div>
+      <div class="AllInsideCard__spark AllInsideCard__spark--blue"></div>
+      <div class="AllInsideCard__spark AllInsideCard__spark--yellow"></div>
       <div class="AllInsideCard__inner">
         <h5 class="AllInsideCard__title">CRM + Database Sync</h5>
         <p class="AllInsideCard__subtitle subtitle">Connected to Your Data</p>
@@ -205,6 +280,14 @@
       </div>
     </article>
     <article class="AllInsideCard AllInsideCard--white">
+      <div class="AllInsideCard__particle AllInsideCard__particle--1"></div>
+      <div class="AllInsideCard__particle AllInsideCard__particle--2"></div>
+      <div class="AllInsideCard__particle AllInsideCard__particle--3"></div>
+      <div class="AllInsideCard__particle AllInsideCard__particle--4"></div>
+      <div class="AllInsideCard__spark AllInsideCard__spark--red"></div>
+      <div class="AllInsideCard__spark AllInsideCard__spark--green"></div>
+      <div class="AllInsideCard__spark AllInsideCard__spark--blue"></div>
+      <div class="AllInsideCard__spark AllInsideCard__spark--yellow"></div>
       <div class="AllInsideCard__inner">
         <h5 class="AllInsideCard__title">Automation Layer</h5>
         <p class="AllInsideCard__subtitle subtitle">Automation Ready</p>
@@ -213,18 +296,26 @@
         </p>
       </div>
     </article>
+    </div>
+    <div class="AllInside__slider-indicators"></div>
+  </div>
+  <div class="AllInside__widget AllInside__widget--mobile">
+    <img src="assets/widget_mobile.png" alt="Widget promo" loading="lazy">
   </div>
 </section>
 <section id="Pricing" class="Pricing">
   <div class="Pricing__header">
-    <h2 class="Pricing__title">Pricing that <span class="accent-blue">grows</span> with your agency</h2>
-    <div class="HeroBlock__line"></div>
+    <div class="Pricing__header-title-wrapper">
+      <h2 class="Pricing__title">Pricing that <span class="accent-blue">grows</span> with <br>your agency</h2>
+      <div class="HeroBlock__line"></div>
+    </div>
     <p class="Pricing__description title">
       Start free, test on real traffic, and upgrade when VIA AI starts bringing you leads consistently.
     </p>
   </div>
-  <div class="Pricing__cards">
-    <article class="PricingCard">
+  <div class="Pricing__slider-wrapper">
+    <div id="pricing-cards" class="Pricing__cards Pricing__slider">
+      <article class="PricingCard">
       <div class="PricingCard__body">
         <h4 class="PricingCard__title">Free trial</h4>
         <p class="PricingCard__text">Test VIA AI with real visitors</p>
@@ -244,7 +335,7 @@
           <li><span class="PricingCard__dot"></span><p>Basic lead export (CSV / email)</p></li>
         </ul>
       </div>
-      <button class="btn btn--primary">Start free trial</button>
+      <button class="btn btn--primary">Start Free Trial</button>
     </article>
     <article class="PricingCard">
       <div class="PricingCard__body">
@@ -267,34 +358,39 @@
           <li><span class="PricingCard__dot"></span><p>Standard support (email + chat)</p></li>
         </ul>
       </div>
-      <button class="btn btn--primary">49$ Basic</button>
+      <button class="btn btn--primary">Start Basic</button>
     </article>
     <article class="PricingCard">
       <div class="PricingCard__body">
         <h4 class="PricingCard__title">Pro</h4>
-        <p class="PricingCard__text">Test VIA AI with real visitors</p>
+        <p class="PricingCard__text">For large real-estate companies</p>
         <div class="HeroBlock__line PricingCard__line"></div>
         <div class="PricingCard__price">
           <span class="number">$99</span>
           <p>/month</p>
         </div>
         <p class="PricingCard__note">
-          Perfect to see how VIA AI works on your website before committing.
+          Scalable AI across all your websites and agents
         </p>
         <p class="subtitle">Key features</p>
         <ul class="PricingCard__list">
           <li><span class="PricingCard__dot"></span><p>Unlimited conversations & websites</p></li>
-          <li><span class="PricingCard__dot"></span><p>Multi-language & multi-market flows</p></li>
-          <li><span class="PricingCard__dot"></span><p>Direct CRM / WhatsApp / API integrations</p></li>
-          <li><span class="PricingCard__dot"></span><p>Custom lead scoring & reports</p></li>
+          <li><span class="PricingCard__dot"></span><p>Multi-language & multi-market AI flows</p></li>
+          <li><span class="PricingCard__dot"></span><p>Custom CRM / WhatsApp / API integrations</p></li>
+          <li><span class="PricingCard__dot"></span><p>Dedicated onboarding & priority support</p></li>
+          <li><span class="PricingCard__dot"></span><p>Team roles, analytics & custom lead scoring</p></li>
         </ul>
       </div>
-      <button class="btn btn--primary">99$ Pro</button>
+      <button class="btn btn--primary">Start Pro</button>
     </article>
+    </div>
+    <div class="Pricing__slider-indicators"></div>
   </div>
 </section>
 <section id="CTA" class="CTA">
   <div class="CTA__card">
+    <div class="CTA__blob-color CTA__blob-color--blue"></div>
+    <div class="CTA__blob-color CTA__blob-color--red"></div>
     <div class="CTA__content">
       <h3 class="CTA__title">Keep your visitors<br><span class="accent-blue">engaged 24/7</span></h3>
       <p class="CTA__description">
@@ -331,9 +427,18 @@
 </section>
 </main>
 <footer id="Footer" class="Footer">
+  <div class="Footer__blob Footer__blob--hero"></div>
+  <div class="Footer__spark Footer__spark--red"></div>
+  <div class="Footer__spark Footer__spark--green"></div>
+  <div class="Footer__spark Footer__spark--blue"></div>
+  <div class="Footer__spark Footer__spark--yellow"></div>
+  <div class="Footer__spark Footer__spark--red Footer__spark--2"></div>
+  <div class="Footer__spark Footer__spark--green Footer__spark--2"></div>
+  <div class="Footer__spark Footer__spark--blue Footer__spark--2"></div>
+  <div class="Footer__spark Footer__spark--yellow Footer__spark--2"></div>
   <div class="Footer__container">
     <div class="Footer__left">
-      <h4 class="Footer__title">Quick navigation</h4>
+      <h5 class="Footer__title">Quick navigation</h5>
       <nav class="Footer__nav">
         <a href="#" class="footer_navlinks">What is VIA AI</a>
         <a href="#" class="footer_navlinks">Pricing</a>
@@ -365,7 +470,7 @@
       </div>
     </div>
     <div class="Footer__right">
-      <h4 class="Footer__title">Our services</h4>
+      <h5 class="Footer__title">Our services</h5>
       <nav class="Footer__nav">
         <a href="#" class="footer_navlinks">Documentation</a>
         <a href="#" class="footer_navlinks">Integration Guides</a>
