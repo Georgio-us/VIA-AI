@@ -144,4 +144,92 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Pricing слайдер
   initSlider('.Pricing__slider', '.Pricing__slider-indicators', '.PricingCard');
+
+  // Contact modal
+  const modal = document.getElementById('ContactModal');
+  const form = document.getElementById('ContactForm');
+  const sourceInput = document.getElementById('ContactFormSource');
+  const closeEls = document.querySelectorAll('[data-contact-modal-close]');
+  const triggers = document.querySelectorAll('[data-contact-trigger]');
+  const dialog = modal ? modal.querySelector('.ContactModal__dialog') : null;
+
+  if (!modal || !form || !sourceInput) return;
+
+  let lastActiveEl = null;
+
+  function openModal(source) {
+    lastActiveEl = document.activeElement;
+    sourceInput.value = source || '';
+
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+
+    const firstInput = form.querySelector('input[name="name"]');
+    if (firstInput) firstInput.focus();
+  }
+
+  function closeModal() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+
+    form.reset();
+    sourceInput.value = '';
+
+    if (lastActiveEl && typeof lastActiveEl.focus === 'function') {
+      lastActiveEl.focus();
+    }
+    lastActiveEl = null;
+  }
+
+  triggers.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      openModal(btn.getAttribute('data-contact-trigger'));
+    });
+  });
+
+  closeEls.forEach((el) => {
+    el.addEventListener('click', closeModal);
+  });
+
+  // Extra safety: close on click outside dialog
+  modal.addEventListener('click', (e) => {
+    if (!modal.classList.contains('is-open')) return;
+    if (!dialog) return;
+    if (!dialog.contains(e.target)) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+      closeModal();
+    }
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const fd = new FormData(form);
+    const name = String(fd.get('name') || '').trim();
+    const phone = String(fd.get('phone') || '').trim();
+    const email = String(fd.get('email') || '').trim();
+    const source = String(fd.get('source') || '').trim();
+
+    const subject = 'VIAWEB';
+    const bodyLines = [
+      source ? `Source: ${source}` : null,
+      `Name: ${name}`,
+      `Phone: ${phone}`,
+      `Email: ${email}`,
+      '',
+      `Sent from: ${window.location.href}`
+    ].filter(Boolean);
+
+    const mailto = `mailto:fahrengheit1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+    window.location.href = mailto;
+
+    closeModal();
+  });
 });

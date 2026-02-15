@@ -18,9 +18,9 @@
       <a href="#Why" class="Header__link menu-link">Ai integration</a>
       <a href="#AllInside" class="Header__link menu-link">How it works</a>
       <a href="#pricing-cards" class="Header__link menu-link">Price</a>
-      <button class="btn btn--secondary Header__nav-btn">Book a demo</button>
+      <button class="btn btn--secondary Header__nav-btn" type="button" data-contact-trigger="book-a-demo">Book a demo</button>
     </nav>
-    <button class="btn btn--secondary Header__demo-btn">Book a demo</button>
+    <button class="btn btn--secondary Header__demo-btn" type="button" data-contact-trigger="book-a-demo">Book a demo</button>
     <button class="Header__menu-toggle" id="MenuToggle" aria-label="Toggle menu">
       <span></span>
       <span></span>
@@ -42,14 +42,14 @@
         VIA AI understands clients' requests, knows your database, speaks any language and converts traffic into qualified leads — 24/7, automatically.
       </p>
       <div class="HeroBlock__buttons">
-        <button class="btn btn--primary HeroBlock__btn-demo HeroBlock__btn-demo--desktop">Try live demo</button>
-        <button class="btn btn--secondary HeroBlock__btn-cases">See use cases</button>
+        <button class="btn btn--primary HeroBlock__btn-demo HeroBlock__btn-demo--desktop" type="button" data-contact-trigger="try-live-demo">Try live demo</button>
+        <button class="btn btn--secondary HeroBlock__btn-cases" type="button" data-contact-trigger="see-use-cases">See use cases</button>
       </div>
     </div>
     <div class="HeroBlock__image-wrapper">
       <img src="assets/hero_img_large.png" alt="VIA.AI Widget" class="HeroBlock__image">
     </div>
-    <button class="btn btn--primary HeroBlock__btn-demo HeroBlock__btn-demo--mobile">Try live demo</button>
+    <button class="btn btn--primary HeroBlock__btn-demo HeroBlock__btn-demo--mobile" type="button" data-contact-trigger="try-live-demo">Try live demo</button>
   </div>
   <a href="#why-grid" class="HeroBlock__learn-more">
     <span class="HeroBlock__learn-more-text menu-link">Learn more</span>
@@ -423,7 +423,7 @@
       <div class="CTA__field CTA__field--textarea">
         <textarea placeholder="Tell us about your project..."></textarea>
       </div>
-      <button type="button" class="btn btn--secondary">Book a demo</button>
+      <button type="button" class="btn btn--secondary" data-contact-trigger="book-a-demo">Book a demo</button>
     </form>
   </div>
 </section>
@@ -505,7 +505,29 @@
     </nav>
   </div>
 </footer>
-<script src="script.js" defer></script>
+  <!-- Contact modal -->
+  <div class="ContactModal" id="ContactModal" aria-hidden="true">
+    <div class="ContactModal__backdrop" data-contact-modal-close></div>
+    <div class="ContactModal__dialog" role="dialog" aria-modal="true" aria-labelledby="ContactModalTitle">
+      <button class="ContactModal__close" type="button" aria-label="Close" data-contact-modal-close></button>
+      <h3 class="ContactModal__title" id="ContactModalTitle">Please, contact our team for it</h3>
+      <form class="ContactModal__form" id="ContactForm">
+        <input type="hidden" name="source" id="ContactFormSource" value="">
+        <div class="ContactModal__field">
+          <input name="name" type="text" placeholder="Full name*" autocomplete="name" required />
+        </div>
+        <div class="ContactModal__field">
+          <input name="phone" type="tel" placeholder="Phone/WhatsApp*" autocomplete="tel" required />
+        </div>
+        <div class="ContactModal__field">
+          <input name="email" type="email" placeholder="Work email*" autocomplete="email" required />
+        </div>
+        <button class="btn btn--primary ContactModal__submit" type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="main.js" defer></script>
 </body>
 </html>
 

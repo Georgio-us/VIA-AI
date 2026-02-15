@@ -49,6 +49,177 @@ background-size: 80px 80px;
 background-position: 0 0, 0 0;
 }
 
+/* ============================================
+   CONTACT MODAL
+   ============================================ */
+.ContactModal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 3000;
+  box-sizing: border-box;
+  padding: calc(env(safe-area-inset-top) + 100px) 16px calc(env(safe-area-inset-bottom) + 16px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ContactModal.is-open {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.ContactModal__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.ContactModal__dialog {
+  position: relative;
+  z-index: 1;
+  width: min(560px, calc(100% - 32px));
+  margin: 0;
+  padding: 28px 24px 24px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(17, 17, 17, 0.92);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.65);
+  overflow: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  max-height: calc(100dvh - 140px);
+}
+
+.ContactModal__dialog::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 10%, rgba(60, 130, 246, 0.18), transparent 55%),
+              radial-gradient(circle at 80% 0%, rgba(215, 64, 64, 0.14), transparent 55%),
+              radial-gradient(circle at 50% 100%, rgba(247, 184, 9, 0.10), transparent 55%);
+  pointer-events: none;
+}
+
+.ContactModal__title {
+  position: relative;
+  z-index: 1;
+  margin: 0 44px 18px 0;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.ContactModal__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+.ContactModal__close::before,
+.ContactModal__close::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+  transform-origin: center;
+  pointer-events: none;
+}
+
+.ContactModal__close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.ContactModal__close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.ContactModal__close:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(60, 130, 246, 0.35);
+}
+
+.ContactModal__form {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ContactModal__field input {
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(106, 108, 155, 0.10);
+  border: 1px solid rgba(106, 108, 155, 0.10);
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: var(--color-main-text);
+  font-family: var(--ff-sf);
+  font-size: 16px;
+  transition: all 0.3s ease;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.ContactModal__field input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #3b82f6;
+  box-shadow:
+    0 0 0 3px rgba(59, 130, 246, 0.2),
+    0 8px 25px rgba(59, 130, 246, 0.1);
+  transform: translateY(-1px);
+}
+
+.ContactModal__field input::placeholder {
+  font-size: 12px;
+  font-weight: var(--fw-regular);
+  font-family: var(--ff-sf);
+  line-height: 1.4;
+  letter-spacing: 0;
+  color: var(--color-placeholder-text);
+}
+
+.ContactModal__submit {
+  width: 100%;
+  padding: 16px;
+  margin-top: 6px;
+}
+
+@media (max-width: 768px) {
+  .ContactModal {
+    padding: calc(env(safe-area-inset-top) + 90px) 16px calc(env(safe-area-inset-bottom) + 16px);
+  }
+
+  .ContactModal__dialog {
+    padding: 24px 18px 18px;
+    max-height: calc(100dvh - 120px);
+  }
+
+  .ContactModal__title {
+    font-size: 22px;
+  }
+}
+
 main {
   max-width: 1200px;
   margin: 0 auto;
